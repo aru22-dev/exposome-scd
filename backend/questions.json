@@ -1,10 +1,101 @@
 [
   {
-    "type": "a",
-    "id": "1",
-    "name": "",
-    "description": "something",
-    "storyType": "b",
-    "result": "c"
+    "id": 1,
+    "text": "Your dishwasher has become faulty and is creating a lot of noise affecting your roommates and neighbors.",
+    "options": [
+      {
+        "label": "A",
+        "text": "jdjd",
+        "effects": {
+          "community": -5,
+          "resources": 3,
+          "health": 3
+        }
+      },
+      {
+        "label": "B",
+        "text": "jrjr",
+        "effects": {
+          "community": -10,
+          "resources": 3,
+          "health": 3
+        }
+      },
+      {
+        "label": "C",
+        "text": "kfenw",
+        "effects": {
+          "community": 3,
+          "resources": 3,
+          "health": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "Your dishwasher has become faulty and is creating a lot of noise affecting your roommates and neighbors.",
+    "options": [
+      {
+        "label": "A",
+        "text": "jdjd",
+        "effects": {
+          "community": -5,
+          "resources": 3,
+          "health": 3
+        }
+      },
+      {
+        "label": "B",
+        "text": "jrjr",
+        "effects": {
+          "community": -10,
+          "resources": 3,
+          "health": 3
+        }
+      },
+      {
+        "label": "C",
+        "text": "kfenw",
+        "effects": {
+          "community": 3,
+          "resources": 3,
+          "health": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "question 2",
+    "options": [
+      {
+        "label": "A",
+        "text": "test 1",
+        "effects": {
+          "community": 5,
+          "resources": 5,
+          "health": 5
+        }
+      },
+      {
+        "label": "B",
+        "text": "test 2",
+        "effects": {
+          "community": 5,
+          "resources": 5,
+          "health": 5
+        }
+      },
+      {
+        "label": "C",
+        "text": "test 3",
+        "effects": {
+          "community": 5,
+          "resources": 5,
+          "health": 5
+        }
+      }
+    ]
   }
 ]

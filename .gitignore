@@ -1,0 +1,43 @@
+# Node.js / Express
+node_modules/
+.env
+dist/
+build/
+
+frontend/node_modules/
+frontend/.cache/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Cache and temp files
+.cache/
+*.bak
+*.tmp
+
+# React/Vite/Next.js
+frontend/node_modules/
+frontend/.cache/
+frontend/build/
+frontend/dist/
+
+# Coverage
+coverage/
+
+# Production build artifacts
+*.tgz
+
+# Local environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
