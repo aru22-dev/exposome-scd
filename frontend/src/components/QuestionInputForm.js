@@ -25,7 +25,7 @@ const QuestionInputForm = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/add-question`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/questions`);
       const data = await response.json();
       setQuestions(data.filter(q => q.text && q.text.trim()));
     };
