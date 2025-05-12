@@ -1,6 +1,7 @@
 {
   "name": "exposome-scd",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@shadcn/ui": "^0.0.4",
