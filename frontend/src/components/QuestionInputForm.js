@@ -6,8 +6,6 @@ import CardContent from '../ui/CardContent';
 import Input from '../ui/Input';
 import Label from '../ui/Label';
 
-const API_BASE = process.env.REACT_APP_API_URL;
-
 const QuestionInputForm = () => {
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
@@ -27,7 +25,7 @@ const QuestionInputForm = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const response = await fetch('${API_BASE}/api/questions');
+      const response = await fetch('${process.env.REACT_APP_API_URL}/api/questions');
       const data = await response.json();
       setQuestions(data.filter(q => q.text && q.text.trim()));
     };
@@ -70,13 +68,13 @@ const QuestionInputForm = () => {
 
   const confirmDelete = async () => {
     if (deleteTargetId !== null) {
-      await fetch(`${API_BASE}/api/delete-question/${deleteTargetId}`, { method: 'DELETE' });
+      await fetch(`${process.env.REACT_APP_API_URL}/api/delete-question/${deleteTargetId}`, { method: 'DELETE' });
 
       const renumbered = questions
         .filter(q => q.id !== deleteTargetId)
         .map((q, idx) => ({ ...q, id: idx + 1 }));
 
-      await fetch('${API_BASE}/api/update-all-questions', {
+      await fetch('${process.env.REACT_APP_API_URL}/api/update-all-questions', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(renumbered)
@@ -108,8 +106,8 @@ const QuestionInputForm = () => {
     };
 
     const url = editId
-      ? `${API_BASE}/api/update-question/${editId}`
-      : '${API_BASE}/api/add-question';
+      ? `${process.env.REACT_APP_API_URL}/api/update-question/${editId}`
+      : '${process.env.REACT_APP_API_URL}/api/add-question';
 
     await fetch(url, {
       method: 'POST',
@@ -127,7 +125,7 @@ const QuestionInputForm = () => {
       }))
     });
 
-    const refreshed = await (await fetch('${API_BASE}/api/questions')).json();
+    const refreshed = await (await fetch('${process.env.REACT_APP_API_URL}/api/questions')).json();
     setQuestions(refreshed);
     alert('Question saved successfully!');
   };
