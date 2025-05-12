@@ -25,7 +25,7 @@ const QuestionInputForm = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const response = await fetch('${process.env.REACT_APP_API_URL}/api/questions');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/add-question`);
       const data = await response.json();
       setQuestions(data.filter(q => q.text && q.text.trim()));
     };
@@ -74,7 +74,7 @@ const QuestionInputForm = () => {
         .filter(q => q.id !== deleteTargetId)
         .map((q, idx) => ({ ...q, id: idx + 1 }));
 
-      await fetch('${process.env.REACT_APP_API_URL}/api/update-all-questions', {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/update-all-questions`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(renumbered)
@@ -107,7 +107,7 @@ const QuestionInputForm = () => {
 
     const url = editId
       ? `${process.env.REACT_APP_API_URL}/api/update-question/${editId}`
-      : '${process.env.REACT_APP_API_URL}/api/add-question';
+      : `${process.env.REACT_APP_API_URL}/api/add-question`;
 
     await fetch(url, {
       method: 'POST',
@@ -125,7 +125,7 @@ const QuestionInputForm = () => {
       }))
     });
 
-    const refreshed = await (await fetch('${process.env.REACT_APP_API_URL}/api/questions')).json();
+    const refreshed = await (await fetch(`${process.env.REACT_APP_API_URL}/api/questions`)).json();
     setQuestions(refreshed);
     alert('Question saved successfully!');
   };
